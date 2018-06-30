@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Translator</h1>
+  <textarea class='original-text'></textarea>
+  <button onclick="translateFn()">변환</button>
+  <div class="result-text"></div>
+  <script src="./hangul.js"></script>
+  <script>
+    console.log(Hangul.disassemble('가나다'));
+
+    function translateFn(){
+      let textArea = document.querySelector("textarea");
+      document.querySelector(".result-text").innerHTML = textArea.value;
+    } 
+
+    // function translator(str){
+    //   return str.split('').map(function(str){
+    //     var d = Hangul.disassemble(str);
+    //       if(d[3] && Hangul.isVowel(d[1])){
+
+    //       }
+    //       return Hangul.assemble(d);
+
+    //     }
+    //   }).join('');
+    // };
+  
+    // DOMContentLoaded : 화면이다 드로잉 되어지면 이 함수를 실행해
+    window.addEventListener('DOMContentLoaded', function(){
+      document.querySelector('change').addEventListener('click', () => {
+        var originalTetValue = document.querySelector('.original-text').value;
+        const changedText = translator();
+        document.querySelector('.result-text').innerText = changedText;
+      })
+    });
+  </script>
+
+</body>
+</html>
